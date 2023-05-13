@@ -4,27 +4,27 @@ import { useRouter } from 'next/router'
 
 const Header: React.FC = () => {
   const router = useRouter()
-  const isActive: (pathname: string) => boolean =
-    pathname => router.pathname === pathname
+  const isActive: (pathname: string) => boolean = (pathname) =>
+    router.pathname === pathname
 
-  return(
+  return (
     <nav>
       <div className="left">
         <Link href="/">
-          <a className="bold" data-active={isActive('/')}>
+          <p className="bold" data-active={isActive('/')}>
             Blog
-          </a>
+          </p>
         </Link>
         <Link href="/drafts">
-          <a data-active={isActive('/drafts')}>Drafts</a>
+          <p data-active={isActive('/drafts')}>Drafts</p>
         </Link>
       </div>
       <div className="right">
         <Link href="/signup">
-          <a data-active={isActive('/signup')}>Signup</a>
+          <p data-active={isActive('/signup')}>Signup</p>
         </Link>
         <Link href="/create">
-          <a data-active={isActive('/create')}>+ Create draft</a>
+          <p data-active={isActive('/create')}>+ Create draft</p>
         </Link>
       </div>
       <style jsx>{`
